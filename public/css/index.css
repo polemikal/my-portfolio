@@ -3,6 +3,7 @@
     width: 50%;
     margin: 0 auto;
     margin-top: 30vh;
+    min-width: 500px;
 }
 
 .container__content {
