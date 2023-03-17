@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>polemikal.net</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/about.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+    <div class="navbar">
+        <div class="navbar__container">
+            <a href="/" class="navbar__link">
+                Home
+            </a>
+            <a href="/about" class="navbar__link">
+                About
+            </a>
+            <a href="/technologies" class="navbar__link">
+                Technologies
+            </a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="container__profile">
+            <div class="container__profile__logo">
+                
+            </div>
+            <div class="container__profile__content">
+                <div class="container__profile__content__text">
+                    <p>
+                        Hello, my name is Doruk. 18 years old. I have a great interest in the software sector and I carry out some studies in this sector.
+                    </p>
+                </div>
+                <div class="container__profile__content__links">
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footer__container">
+            <div class="footer__text">
+                <span>© 2023 polemikal.net</span>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
+
+<script>
+    const links = [
+        { name: 'GitHub', url: 'https://github.com/polemikal', firstColor: '#FFFFFF', secondColor: '#555555' },
+        { name: 'Instagram', url: 'https://www.instagram.com/polemikal/', firstColor: '#E80685', secondColor: '#555555' },
+        { name: 'Twitter', url: 'https://twitter.com/polemikaladam', firstColor: '#1DA1F2', secondColor: '#555555' },
+        { name: 'Discord', url: 'https://discord.com/users/968529990851375104', firstColor: '#7289DA', secondColor: '#555555' }
+    ]
+
+    $(document).ready(function() {
+        $('.navbar__link').toArray().forEach(function(link) {
+            if (link.href == window.location.href) {
+                link.classList.add('hover-underline')
+            } else {
+                link.classList.add('hover-underline-animation')
+            }
+        });
+
+        links.forEach(function(link) {
+            const el = document.createElement('a');
+            el.classList.add('container__profile__content__links__link');
+            el.style.color = link.firstColor;
+            el.style.border = `2px solid ${link.firstColor}`;
+            el.style.transition = 'all 0.2s ease-in-out';
+            el.innerHTML = link.name;
+            el.href = link.url;
+
+            $('.container__profile__content__links').append(el)
+
+            el.addEventListener('mouseover', function() {
+                el.style.backgroundColor = `${link.firstColor}`;
+                el.style.color = `#000000`;
+            });
+
+            el.addEventListener('mouseout', function() {
+                // remove the background color
+                el.style.backgroundColor = 'unset'
+                el.style.color = `${link.firstColor}`;
+            });
+        });
+    });
+</script>

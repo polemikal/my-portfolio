@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>polemikal.net</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+    <div class="navbar">
+        <div class="navbar__container">
+            <a href="/" class="navbar__link">
+                Home
+            </a>
+            <a href="/about" class="navbar__link">
+                About
+            </a>
+            <a href="/technologies" class="navbar__link">
+                Technologies
+            </a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="container__content">
+            <h1>Hi, welcome to my portfolio website! 👋</h1>
+            <p>My awesome and outstanding portfolio website.</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footer__container">
+            <div class="footer__text">
+                <span>© 2023 polemikal.net</span>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
+
+<script>
+    $(document).ready(function() {
+        $('.navbar__link').toArray().forEach(function(link) {
+            if (link.href == window.location.href) {
+                link.classList.add('hover-underline')
+            } else {
+                link.classList.add('hover-underline-animation')
+            }
+        });
+    });
+</script>
