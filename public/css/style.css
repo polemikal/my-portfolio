@@ -13,6 +13,7 @@ body {
     height: 7vh;
     padding: 0;
     margin: 0;
+    min-width: 500px;
 }
 
 .navbar__container {
@@ -75,7 +76,7 @@ body {
 }
 
 .footer {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
@@ -85,6 +86,7 @@ body {
 .footer__container {
     height: 100%;
     width: 30%;
+    min-width: 200px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -99,4 +101,12 @@ body {
     font-size: 1rem;
     font-weight: 200;
     padding: 3px;
+}
+
+@media only screen and (max-width: 1160px) {
+    .footer {
+        position: relative;
+        bottom: 0;
+        left: 0;
+    }
 }
